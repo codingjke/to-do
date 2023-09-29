@@ -1,3 +1,5 @@
+const todos = getTasksFromLocalStorage();
+
 document.addEventListener("DOMContentLoaded", () => {
   loadTasks();
 
@@ -31,18 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       editButton.textContent = "✏️";
     });
   };
-
-  window.removeCompletedTasks = function () {
-    deleteCompleted();
-  };
-
-  window.removeAllTasks = function () {
-    deleteAll();
-  };
 });
-
-// Массив задач
-const todos = getTasksFromLocalStorage();
 
 function loadTasks() {
   renderTodos();
@@ -117,20 +108,6 @@ function deleteTodo(id) {
   renderTodos();
 }
 
-function deleteCompleted() {
-  const uncompletedTodos = todos.filter((todo) => !todo.isDone);
-  todos.length = 0;
-  todos.push(...uncompletedTodos); 
-  setTasksToLocalStorage(todos);
-  renderTodos(); /
-}
-
-function deleteAll() {
-  todos.length = 0; 
-  localStorage.removeItem("tasks");
-  renderTodos(); 
-}
-
 function getTasksFromLocalStorage() {
   const tasks = localStorage.getItem("tasks");
   return tasks ? JSON.parse(tasks) : [];
@@ -139,3 +116,5 @@ function getTasksFromLocalStorage() {
 function setTasksToLocalStorage(tasks) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
+loadTasks();
