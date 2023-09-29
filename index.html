@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Ту-Ду Список</title>
-    <link rel="stylesheet" href="styles.css">
-    
-</head>
-<body>
-<div id="app">
-    <input type="text" id="taskInput" placeholder="Новая задача..." />
-    <button onclick="addTask()">Добавить</button>
-    <ul id="taskList"></ul>
-    <button onclick="removeCompletedTasks()">Удалить завершённые</button>
-    <button onclick="removeAllTasks()">Удалить все</button>
-</div>
-<script type="module" src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" id="taskInput" placeholder="Новая задача..." />
+      <button onclick="addTask()">Добавить</button>
+      <ul id="taskList"></ul>
+      <button onclick="removeCompletedTasks()">Удалить завершённые</button>
+      <button onclick="removeAllTasks()">Удалить все</button>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
 </html>
