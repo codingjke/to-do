@@ -120,15 +120,15 @@ function deleteTodo(id) {
 function deleteCompleted() {
   const uncompletedTodos = todos.filter((todo) => !todo.isDone);
   todos.length = 0;
-  todos.push(...uncompletedTodos); // обновляем массив todos
+  todos.push(...uncompletedTodos); 
   setTasksToLocalStorage(todos);
-  renderTodos(); // перезагрузим задачи после удаления
+  renderTodos(); /
 }
 
 function deleteAll() {
-  todos.length = 0; // очищаем массив todos
+  todos.length = 0; 
   localStorage.removeItem("tasks");
-  renderTodos(); // перезагрузим задачи после удаления
+  renderTodos(); 
 }
 
 function getTasksFromLocalStorage() {
